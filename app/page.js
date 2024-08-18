@@ -5,7 +5,8 @@ import ProductGrid from "../components/ProductGrid";
 async function getProducts() {
 
 	
-	const domain = process.env.BASE_URL 
+	const domain = process.env.BASE_URL || "http://localhost:3000"
+	console.log('Fetched BASE_URL:', domain); 
 	
 	const res = await fetch(`${domain}/api/products`, {
 		cache: "no-store",
