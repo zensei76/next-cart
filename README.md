@@ -57,7 +57,7 @@ Usage
     
 
 
-Going Above and Beyond
+###Going Above and Beyond
 Error Handling
 Error Handling for Invalid Quantity
 
