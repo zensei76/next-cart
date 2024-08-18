@@ -1,12 +1,12 @@
-Next.js E-commerce Project
+# Next.js E-commerce Project
 
-This is a Next.js project bootstrapped with create-next-app.
-Getting Started
+This is a Next.js project bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
 
 First, run the development server:
 
-bash
-
+```bash
 npm run dev
 # or
 yarn dev
@@ -17,21 +17,15 @@ bun dev
 
 Open http://localhost:3000 with your browser to see the result.
 
-You can start editing the page by modifying app/page.js. The page auto-updates as you edit the file.
-
-This project uses next/font to automatically optimize and load Inter, a custom Google Font.
-Learn More
-
 Going Above and Beyond
 Error Handling
 
 I implemented robust error handling for invalid quantity inputs and discount codes:
+Error Handling for Invalid Quantity
 
-    Error Handling for Invalid Quantity
+Ensure the quantity of cart items never drops below 1:
 
-    Ensure the quantity of cart items never drops below 1:
-
-    javascript
+javascript
 
 <button
   onClick={() =>
@@ -43,35 +37,33 @@ I implemented robust error handling for invalid quantity inputs and discount cod
 </button>
 
 Explanation: Uses Math.max(1, item.quantity - 1) to ensure the quantity stays at least 1, preventing invalid values.
-
 Error Handling for Discount Codes
 
 Show toast notifications for valid and invalid discount codes:
 
 javascript
 
-    const applyDiscount = () => {
-      if (discountCode === "SAVE10") {
-        toast("Discount applied successfully!", {
-          classNames: {
-            toast: 'bg-green-500',
-            title: 'text-xl',
-          },
-        });
-        setDiscount(subtotal * 0.1);
-      } else {
-        toast(`Invalid discount code, try "SAVE10"`, {
-          classNames: {
-            toast: 'bg-red-500',
-            title: 'text-xl',
-          },
-        });
-        setDiscount(0);
-      }
-    };
+const applyDiscount = () => {
+  if (discountCode === "SAVE10") {
+    toast("Discount applied successfully!", {
+      classNames: {
+        toast: 'bg-green-500',
+        title: 'text-xl',
+      },
+    });
+    setDiscount(subtotal * 0.1);
+  } else {
+    toast(`Invalid discount code, try "SAVE10"`, {
+      classNames: {
+        toast: 'bg-red-500',
+        title: 'text-xl',
+      },
+    });
+    setDiscount(0);
+  }
+};
 
-    Explanation: Displays a green toast for successful discount application and a red toast for invalid codes, guiding the user accordingly.
-
+Explanation: Displays a green toast for successful discount application and a red toast for invalid codes, guiding the user accordingly.
 Persistent Cart Storage
 
 This project includes persistent cart storage using cookies. This allows the cart to retain its state across sessions without requiring user login. The following utility functions handle saving and retrieving the cart data using cookies.
@@ -105,4 +97,3 @@ How It Works:
     Retrieving Cart Data: When the application starts, it retrieves the cart data from the cookie using getCartFromCookie. If no cart data is found, it initializes an empty cart.
 
 By including these functions, you ensure that the user's cart is maintained between sessions, providing a seamless shopping experience.
-
