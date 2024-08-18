@@ -32,7 +32,7 @@ export default async function ProductPage({ params }) {
 				<p className='text-gray-600 mb-4'>{product.description}</p>
 				<p className='text-2xl font-bold mb-4'>${product.price.toFixed(2)}</p>
 				<Suspense fallback={<div>Loading...</div>}>
-					<AddToCartButton product={product} />
+					<AddToCartButton product={product} variant='default' />
 				</Suspense>
 			</div>
 		</div>
