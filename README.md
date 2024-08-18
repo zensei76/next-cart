@@ -12,52 +12,8 @@ This project is a fully functional e-commerce application built with Next.js and
 - **Cart Counter:** Update the cart's dedicated counter to reflect the number of added items.
 - **Visual Feedback:** Provides visual feedback confirming the item's addition.
 - **Checkout (Basic):** Initiate a basic checkout process.
-
-## Getting Started
-
-### Installation
-
-1. **Clone this repository:**
-
-    ```bash
-    git clone https://github.com/your-username/your-project-name.git
-    ```
-
-2. **Navigate to the project directory:**
-
-    ```bash
-    cd your-project-name
-    ```
-
-3. **Install dependencies:**
-
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
-
-### Development Server
-
-Start the development server to view your e-commerce application locally:
-
-```bash
-npm run dev
-# or
-yarn dev 
-```
-
-This will start the server and open your default browser at http://localhost:3000. Changes to your code will be automatically reflected in the browser.
-Usage
-
-    Visit http://localhost:3000 in your browser.
-    Explore product categories and individual products.
-    Add items to your cart and adjust quantities.
-    Initiate a basic checkout flow (optional, depending on implementation).
-    
-
-
-###Going Above and Beyond
+- 
+Going Above and Beyond
 Error Handling
 Error Handling for Invalid Quantity
 
@@ -133,10 +89,55 @@ export const getCartFromCookie = () => {
 ```
 How It Works:
 
-    Saving Cart Data: When the cart data changes, it is saved to a cookie using saveCartToCookie. The cookie persists for 7 days.
-    Retrieving Cart Data: When the application starts, it retrieves the cart data from the cookie using getCartFromCookie. If no cart data is found, it initializes an empty cart.
+Saving Cart Data: When the cart data changes, it is saved to a cookie using saveCartToCookie. The cookie persists for 7 days.
+Retrieving Cart Data: When the application starts, it retrieves the cart data from the cookie using getCartFromCookie. If no cart data is found, it initializes an empty cart.
 
 By including these functions, you ensure that the user's cart is maintained between sessions, providing a seamless shopping experience.
+
+## Getting Started
+
+### Installation
+
+1. **Clone this repository:**
+
+    ```bash
+    git clone https://github.com/your-username/your-project-name.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd your-project-name
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Development Server
+
+Start the development server to view your e-commerce application locally:
+
+```bash
+npm run dev
+# or
+yarn dev 
+```
+
+This will start the server and open your default browser at http://localhost:3000. Changes to your code will be automatically reflected in the browser.
+Usage
+
+    Visit http://localhost:3000 in your browser.
+    Explore product categories and individual products.
+    Add items to your cart and adjust quantities.
+    Initiate a basic checkout flow (optional, depending on implementation).
+    
+
+
 Additional Notes
 
-    This project utilizes the Fake Store API for product data, providing a convenient way to test your e-commerce functionalities without managing real product data.
+This project utilizes the Fake Store API for product data, providing a convenient way to test your e-commerce functionalities without managing real product data.
