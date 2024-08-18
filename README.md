@@ -1,74 +1,64 @@
-Next.js E-commerce Project (Using Fake Store API)
+# Next.js E-commerce Project (Using Fake Store API)
 
 This project is a fully functional e-commerce application built with Next.js and leverages the Fake Store API to provide product data.
 
-Features:
+## Features
 
-    Product Listing: Browse through a catalog of products with details and images fetched from the Fake Store API.
-    Product Details: View detailed information about individual products.
-    Shopping Cart: Add and remove products from your cart, with quantity adjustments.
-    Update the cart dedicated counter to reflect the number of added items .
-    Provids visual feedback confirming the item's addition.
-    Checkout (Basic): Initiate a basic checkout process .
+- **Product Listing:** Browse through a catalog of products with details and images fetched from the Fake Store API.
+- **Product Details:** View detailed information about individual products.
+- **Shopping Cart:** Add and remove products from your cart, with quantity adjustments.
+- **Cart Counter:** Update the cart's dedicated counter to reflect the number of added items.
+- **Visual Feedback:** Provides visual feedback confirming the item's addition.
+- **Checkout (Basic):** Initiate a basic checkout process.
 
-Getting Started
+## Getting Started
 
+### Installation
 
-Installation:
+1. **Clone this repository:**
 
-    Clone this repository:
-    Bash
-
+    ```bash
     git clone https://github.com/your-username/your-project-name.git
+    ```
 
-    Use code with caution.
+2. **Navigate to the project directory:**
 
-Navigate to the project directory:
-Bash
+    ```bash
+    cd your-project-name
+    ```
 
-cd your-project-name  
+3. **Install dependencies:**
 
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-Use code with caution.
-
-Install dependencies:  
-
-Bash
-
-npm install
-# or
-yarn install
-
-Use code with caution.
-
-Development Server:
+### Development Server
 
 Start the development server to view your e-commerce application locally:
-Bash
 
+```bash
 npm run dev
 # or
 yarn dev
 
-Use code with caution.
-
 This will start the server and open your default browser at http://localhost:3000. Changes to your code will be automatically reflected in the browser.
-
-Usage:
+Usage
 
     Visit http://localhost:3000 in your browser.
     Explore product categories and individual products.
     Add items to your cart and adjust quantities.
     Initiate a basic checkout flow (optional, depending on implementation).
 
-
 Going Above and Beyond
 Error Handling
-
 Error Handling for Invalid Quantity
 
 To ensure the quantity of cart items never drops below 1, the following code is implemented:
-JavaScript
+
+javascript
 
 <button
   onClick={() =>
@@ -79,10 +69,7 @@ JavaScript
   Decrease Quantity
 </button>
 
-Use code with caution.
-
-This code utilizes Math.max(1, item.quantity - 1) to prevent the quantity from becoming negative or zero.
-
+Explanation: This code utilizes Math.max(1, item.quantity - 1) to prevent the quantity from becoming negative or zero.
 Error Handling for Discount Codes
 
 Show toast notifications for valid and invalid discount codes:
@@ -143,9 +130,6 @@ How It Works:
     Retrieving Cart Data: When the application starts, it retrieves the cart data from the cookie using getCartFromCookie. If no cart data is found, it initializes an empty cart.
 
 By including these functions, you ensure that the user's cart is maintained between sessions, providing a seamless shopping experience.
+Additional Notes
 
-Additional Notes:
-
-    This project utilizes the Fake Store API for product data, providing a convenient way to test your e-commerce functionalities without managing real product data
-
-.
+    This project utilizes the Fake Store API for product data, providing a convenient way to test your e-commerce functionalities without managing real product data.
