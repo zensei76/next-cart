@@ -1,3 +1,5 @@
+
+
 # Next.js E-commerce Project (Using Fake Store API)
 
 This project is a fully functional e-commerce application built with Next.js and leverages the Fake Store API to provide product data.
@@ -42,7 +44,8 @@ Start the development server to view your e-commerce application locally:
 ```bash
 npm run dev
 # or
-yarn dev
+yarn dev 
+```
 
 This will start the server and open your default browser at http://localhost:3000. Changes to your code will be automatically reflected in the browser.
 Usage
@@ -51,6 +54,8 @@ Usage
     Explore product categories and individual products.
     Add items to your cart and adjust quantities.
     Initiate a basic checkout flow (optional, depending on implementation).
+    
+
 
 Going Above and Beyond
 Error Handling
@@ -58,7 +63,7 @@ Error Handling for Invalid Quantity
 
 To ensure the quantity of cart items never drops below 1, the following code is implemented:
 
-javascript
+```javascript
 
 <button
   onClick={() =>
@@ -68,13 +73,14 @@ javascript
 >
   Decrease Quantity
 </button>
+```
 
 Explanation: This code utilizes Math.max(1, item.quantity - 1) to prevent the quantity from becoming negative or zero.
 Error Handling for Discount Codes
 
 Show toast notifications for valid and invalid discount codes:
 
-javascript
+```javascript
 
 const applyDiscount = () => {
   if (discountCode === "SAVE10") {
@@ -95,6 +101,7 @@ const applyDiscount = () => {
     setDiscount(0);
   }
 };
+```
 
 Explanation: Displays a green toast for successful discount application and a red toast for invalid codes, guiding the user accordingly.
 Persistent Cart Storage
@@ -103,7 +110,7 @@ This project includes persistent cart storage using cookies. This allows the car
 
 Utility Functions (utils/cookies.js):
 
-javascript
+```javascript
 
 import Cookies from 'js-cookie';
 
@@ -123,7 +130,7 @@ export const getCartFromCookie = () => {
   const cart = Cookies.get('cart');
   return cart ? JSON.parse(cart) : { items: [] }; // Default to empty cart
 };
-
+```
 How It Works:
 
     Saving Cart Data: When the cart data changes, it is saved to a cookie using saveCartToCookie. The cookie persists for 7 days.
