@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useCart } from "../context/cartContext";
 import CartItem from "../../components/CartItem";
+import { toast } from "sonner";
 
 export default function Cart() {
 	const { cart } = useCart();
@@ -17,8 +18,16 @@ export default function Cart() {
 
 	const applyDiscount = () => {
 		if (discountCode === "SAVE10") {
+			toast("Discount applied successfully!",{classNames: {
+				toast: 'bg-green-500',
+				title: ' text-xl',
+			  },});
 			setDiscount(subtotal * 0.1);
-		} else {
+		} else { //Error handling for scenarios like invalid quantity input or discount codes.
+			toast(`Invalid discount code , try "SAVE10"`,{classNames:  {
+				toast: 'bg-red-500',
+				title: ' text-xl',
+			},});
 			setDiscount(0);
 		}
 	};

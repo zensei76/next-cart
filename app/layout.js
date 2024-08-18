@@ -1,10 +1,10 @@
 'use client';
 
-// import { CartProvider, useCart } from '@/utils/cartContext';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { CartProvider, useCart } from './context/cartContext';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,6 +38,7 @@ function Layout( { children}) {
 
           <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {children}
+            <Toaster position="top-center" />
           </main>
 
           <footer className="bg-gray-50">
